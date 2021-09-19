@@ -1,6 +1,6 @@
 import cv2
 import mediapipe as mp
-#Made with tutorial https://www.youtube.com/watch?v=NZde8Xt78Iw
+#Reference: https://www.youtube.com/watch?v=NZde8Xt78Iw
 
 
 class handDetector(): #The hand detector object
