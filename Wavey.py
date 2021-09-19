@@ -88,4 +88,4 @@ def fingerFunction(w, h): #the function of the program
                 break #end program
 
         cv2.waitKey(1)
-#tutorial help: https://www.youtube.com/watch?v=p5Z_GGRCI5s
+#reference: https://www.youtube.com/watch?v=p5Z_GGRCI5s
