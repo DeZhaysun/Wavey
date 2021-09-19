@@ -11,40 +11,40 @@ import pytesseract as tess
 tess.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 from PIL import Image
 
-def fingerFunction(w, h):
-    cap = cv2.VideoCapture(0)
+def fingerFunction(w, h): #the function of the program
+    cap = cv2.VideoCapture(0) #webcam
     current = 0
     detector = htm.handDetector(detectionCon=0.75)
-    tipIds = [8, 12, 16, 20]
-    size = [0, 0, w, h]
+    tipIds = [8, 12, 16, 20] #the ids of the tips of fingers (without thumb)
+    size = [0, 0, w, h] #size of screen
 
     while True:
         success, img = cap.read()
         img = detector.findHands(img, draw=False)
-        lmList = detector.findPosition(img)
+        lmList = detector.findPosition(img) #gets the list of positions of the landmarks of hands
 
-        if len(lmList) != 0:
+        if len(lmList) != 0: #When the hand is in frame
             fingers = []
-
+            
             if lmList[5][1] > lmList[17][1]: #right thumb
                 if lmList[4][1] > lmList[4-1][1]:
-                    fingers.append(1)
+                    fingers.append(1)#raised finger
                 else:
-                    fingers.append(0)
+                    fingers.append(0)#closed finger
             else: #left thumb
                 if lmList[4][1] < lmList[4-1][1]:
-                    fingers.append(1)
+                    fingers.append(1) #raised finger
                 else:
-                    fingers.append(0)
+                    fingers.append(0) #closed finger
 
             #other 4 fingers
             for id in range(4):
                 if lmList[tipIds[id]][2] < lmList[tipIds[id]-2][2]:
-                    fingers.append(1)
+                    fingers.append(1)#raised finger
                 else:
                     fingers.append(0)
 
-            totalFingers = fingers.count(1)
+            totalFingers = fingers.count(1) #counts the amount of fingers raised
 
             if totalFingers == 1: #Take screenshot and record the text onto text file
                 myScreenshot = pyautogui.screenshot(region=(size[0], size[1], size[2], size[3]))
@@ -86,4 +86,4 @@ def fingerFunction(w, h):
                 break
 
         cv2.waitKey(1)
-fingerFunction(1920,1080)
+#tutorial help: https://www.youtube.com/watch?v=p5Z_GGRCI5s
