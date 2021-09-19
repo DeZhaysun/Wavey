@@ -1,5 +1,6 @@
 # Wavey
 The ultimate note taking assistant for students
+Run WaveyGui.py
 
 Inspiration: 
 We students faced many challenges when learning turned from in-person to online. One of the main challenges students faced was how to take efficient notes. To combat this, we decided to create Wavey, your ultimate note-taking assistant. 
