@@ -1,7 +1,9 @@
 import cv2
 import mediapipe as mp
+#Made with tutorial https://www.youtube.com/watch?v=NZde8Xt78Iw
 
-class handDetector():
+
+class handDetector(): #The hand detector object
     def __init__(self, mode = False, maxHands = 2, detectionCon = 0.5, trackCon = 0.5):
         self.mode = mode
         self.maxHands = maxHands
@@ -12,7 +14,7 @@ class handDetector():
         self.hands = self.mpHands.Hands(self.mode, self.maxHands, self.detectionCon, self.trackCon)
         self.mpDraw = mp.solutions.drawing_utils
 
-    def findHands(self, img, draw = True):
+    def findHands(self, img, draw = True): #finds the hands
 
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         self.results = self.hands.process(imgRGB)
@@ -25,7 +27,7 @@ class handDetector():
                     self.mpDraw.draw_landmarks(img, handLms, self.mpHands.HAND_CONNECTIONS)
         return img
 
-    def findPosition(self, img, handNo = 0):
+    def findPosition(self, img, handNo = 0): # puts all the 21 landmark positions of hand into a list
 
         lmList = []
         if self.results.multi_hand_landmarks:
