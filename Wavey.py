@@ -47,35 +47,37 @@ def fingerFunction(w, h): #the function of the program
             totalFingers = fingers.count(1) #counts the amount of fingers raised
 
             if totalFingers == 1: #Take screenshot and record the text onto text file
+                #screenshot
                 myScreenshot = pyautogui.screenshot(region=(size[0], size[1], size[2], size[3]))
                 myScreenshot.save(f'{current}.png')
 
-                imag = Image.open(f'{current}.png')  # OPEN IMAGE
-                text = tess.image_to_string(imag)  # make the text equal to image text
-                print(text)
-                f = open(f'{current}.txt', 'w')
+                imag = Image.open(f'{current}.png') 
+                text = tess.image_to_string(imag) #take all text from image
+                
+                f = open(f'{current}.txt', 'w') #write text onto text file
                 f.write(text)
                 f.close
 
                 current += 1
                 time.sleep(2)
 
-            elif totalFingers == 2:
+            elif totalFingers == 2: #Screenshot
                 myScreenshot = pyautogui.screenshot(region=(size[0], size[1], size[2], size[3]))
                 myScreenshot.save(f'{current}.png')
 
                 current += 1
                 time.sleep(2)
 
-            elif totalFingers == 3:
+            elif totalFingers == 3: #only create text file
+                #screenshot
                 myScreenshot = pyautogui.screenshot(region=(size[0], size[1], size[2], size[3]))
                 myScreenshot.save(f'image.png')
 
-                imag = Image.open("image.png")  # OPEN IMAGE
-                text = tess.image_to_string(imag)  # make the text equal to image text
-                os.remove("image.png")  # REMOVES SS
+                imag = Image.open("image.png")
+                text = tess.image_to_string(imag)  #take text from image
+                os.remove("image.png")  #delete image
 
-                f = open(f'{current}.txt', 'w')
+                f = open(f'{current}.txt', 'w') #write text onto file
                 f.write(text)
                 f.close
 
@@ -83,7 +85,7 @@ def fingerFunction(w, h): #the function of the program
                 time.sleep(2)
 
             elif totalFingers == 4:
-                break
+                break #end program
 
         cv2.waitKey(1)
 #tutorial help: https://www.youtube.com/watch?v=p5Z_GGRCI5s
