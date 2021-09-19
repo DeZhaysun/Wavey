@@ -21,3 +21,7 @@ We learned how to work with mediapipe and how to create a basic GUI with buttons
 
 What’s next for Wavey: 
 We hope to alter our GUI to match our figma designs and also ironing out our screenshot size.
+
+References:
+https://www.youtube.com/watch?v=NZde8Xt78Iw
+https://www.youtube.com/watch?v=p5Z_GGRCI5s
