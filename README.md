@@ -1,7 +1,9 @@
 # Wavey
 The ultimate note taking assistant for students
 
-Visit https://devpost.com/software/wavey for more information and demo
+![image](https://github.com/DeZhaysun/Wavey/assets/61562373/357e2c86-d4c2-489a-a1a9-fbde4ffff951)
+![image](https://github.com/DeZhaysun/Wavey/assets/61562373/c1453792-bf99-425b-a545-4c021d42a9ef)
+![image](https://github.com/DeZhaysun/Wavey/assets/61562373/ea031fb7-0167-4659-9630-8d42887f1c5b)
 
 - Run WaveyGui.py
 
