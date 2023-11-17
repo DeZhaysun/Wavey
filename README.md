@@ -7,7 +7,7 @@ Wavey makes note-taking incredibly efficient by utilizing hand gestures to perfo
 - Python
 - **Computer Vision** through `mediapipe`
 - **OCR** through `pytesseract`
-- GUI: `pyautogui`
+- **GUI**: `pyautogui`
 - tkinter
 
 ![image](https://github.com/DeZhaysun/Wavey/assets/61562373/cf1a9cce-7bd9-4324-bc34-1fd7c666fa3e)
