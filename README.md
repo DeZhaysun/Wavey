@@ -1,5 +1,8 @@
 # Wavey
 The ultimate note taking assistant for students
+
+Visit https://devpost.com/software/wavey for more information and demo
+
 - Run WaveyGui.py
 
 Inspiration: 
